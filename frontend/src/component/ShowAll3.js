@@ -11,7 +11,7 @@ function ShowAll3() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://" + window.location.hostname + ":8080/other/")
+      .get("http://" + window.location.hostname + ":8070/other/")
       .then((Response) => {
         setVans(Response.data);
         setLoading(false);

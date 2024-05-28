@@ -15,7 +15,7 @@ function Update2() {
 
   useEffect(() => {
     axios
-      .get(`http://${window.location.hostname}:8080/vans/${id}`)
+      .get(`http://${window.location.hostname}:8070/vans/${id}`)
       .then((Response) => {
         setMake(Response.data.make);
         setMode(Response.data.mode);
@@ -37,7 +37,7 @@ function Update2() {
       sh,
     };
     axios
-      .put(`http://${window.location.hostname}:8080/vans/${id}`, newVehicle)
+      .put(`http://${window.location.hostname}:8070/vans/${id}`, newVehicle)
       .then(() => {
         //alert("added");
       })

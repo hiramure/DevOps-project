@@ -25,7 +25,7 @@ function Login() {
     e.preventDefault();
 
     axios
-      .post("http://" + window.location.hostname + ":8080/login", {
+      .post("http://" + window.location.hostname + ":8070/login", {
         name,
         password,
       })

@@ -10,7 +10,7 @@ function DeleteCar() {
   const navigate = useNavigate();
   const deleteCar = () => {
     axios
-      .delete(`http://${window.location.hostname}:8080/cars/${id}`)
+      .delete(`http://${window.location.hostname}:8070/cars/${id}`)
       .then(() => {
         navigate("/cars/show");
       })

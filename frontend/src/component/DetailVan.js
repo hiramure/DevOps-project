@@ -10,7 +10,7 @@ function DetailVan() {
 
   useEffect(() => {
     axios
-      .get(`http://${window.location.hostname}:8080/vans/${id}`)
+      .get(`http://${window.location.hostname}:8070/vans/${id}`)
       .then((Response) => {
         setVan(Response.data);
         console.log(Response.data);

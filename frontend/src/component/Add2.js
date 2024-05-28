@@ -21,7 +21,7 @@ function Add2() {
       sh,
     };
     axios
-      .post("http://" + window.location.hostname + ":8080/cars/", newVehicle)
+      .post("http://" + window.location.hostname + ":8070/cars/", newVehicle)
       .then(() => {
         //alert("added");
       })

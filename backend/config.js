@@ -1,4 +1,4 @@
-export const PORT = 8080;
+export const PORT = 8070;
 
 // export const MONGODBURL = "mongodb://mongodb:27017/vehicle";
 

@@ -28,7 +28,7 @@ function Register() {
       password,
     };
     axios
-      .post("http://" + window.location.hostname + ":8080/register", newUser)
+      .post("http://" + window.location.hostname + ":8070/register", newUser)
       .then((Response) => {
         navigate("/first");
       })

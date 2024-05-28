@@ -11,7 +11,7 @@ function DetailCar() {
 
   useEffect(() => {
     axios
-      .get(`http://${window.location.hostname}:8080/cars/${id}`)
+      .get(`http://${window.location.hostname}:8070/cars/${id}`)
       .then((Response) => {
         setCar(Response.data);
         console.log(Response.data);

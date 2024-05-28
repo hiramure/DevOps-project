@@ -8,7 +8,7 @@ function DeleteVan() {
   const navigate = useNavigate();
   const deleteVan = () => {
     axios
-      .delete(`http://${window.location.hostname}:8080/vans/${id}`)
+      .delete(`http://${window.location.hostname}:8070/vans/${id}`)
       .then(() => {
         navigate("/vans/show");
       })

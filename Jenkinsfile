@@ -2,25 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('first') {
             steps {
                 sh 'docker-compose build '
             }
         }
 
-        stage('Hello') {
+        stage('second') {
             steps {
                 sh 'docker-compose up -d mongodb  '
             }
         }
 
-        stage('Hello') {
+        stage('third') {
             steps {
                 sh 'docker-compose up -d backend '
             }
         }
 
-        stage('Hello') {
+        stage('fouth') {
             steps {
                 sh ' docker-compose up -d frontend  '
             }

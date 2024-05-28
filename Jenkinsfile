@@ -4,25 +4,25 @@ pipeline {
     stages {
         stage('first') {
             steps {
-                sh 'docker-compose build '
+                 'docker-compose build '
             }
         }
 
         stage('second') {
             steps {
-                sh 'docker-compose up -d mongodb  '
+                 'docker-compose up -d mongodb  '
             }
         }
 
         stage('third') {
             steps {
-                sh 'docker-compose up -d backend '
+                 'docker-compose up -d backend '
             }
         }
 
         stage('fouth') {
             steps {
-                sh ' docker-compose up -d frontend  '
+                 ' docker-compose up -d frontend  '
             }
         }
 

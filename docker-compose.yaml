@@ -43,5 +43,4 @@ networks:
   mern-network:
     driver: bridge
 
-volumes: 
-  apiDB:
+

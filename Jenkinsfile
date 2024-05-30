@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('first') {
             steps {
-                sh 'docker-compose build '
+                bat 'docker-compose build '
             }
         }
 
         stage('second') {
             steps {
-                sh 'docker-compose up -d mongodb  '
+                bat 'docker-compose up -d mongodb  '
             }
         }
 
         stage('third') {
             steps {
-                sh 'docker-compose up -d backend '
+                bat 'docker-compose up -d backend '
             }
         }
 

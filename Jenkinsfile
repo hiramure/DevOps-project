@@ -22,7 +22,7 @@ pipeline {
 
         stage('fouth') {
             steps {
-                sh ' docker-compose up -d frontend  '
+                bat ' docker-compose up -d frontend  '
             }
         }
 

@@ -1,23 +1,15 @@
-pipeline {
-    agent any
-    stages {
-        stage('Build Docker Images') {
-            steps {
-                // Your Docker build steps here
-            }
-        }
-        stage('Deploy with Ansible') {
-            steps {
-                // Change ownership of SSH key
-                sh 'sudo chown jenkins:jenkins /var/lib/jenkins/.ssh/id_rsa'
-                
-                // Set correct permissions on SSH key
-                sh 'sudo chmod 600 /var/lib/jenkins/.ssh/id_rsa'
-                
-                // Execute Ansible playbook with updated SSH key
-                sh 'ansible-playbook deploy.yml -i hosts --private-key /var/lib/jenkins/workspace/01/id_rsa -u sayuri'
-            }
-        }
-    }
-}
+---
+- name: Deploy MERN application
+  hosts: deployment
+  become: yes
+  tasks:
+    - name: Pull latest code from Git
+      git:
+        repo: 'https://github.com/hiramure/DevOps-project.git'
+        dest: /home/jenkins/Devops
+        version: HEAD
 
+    - name: Build and start Docker containers
+      shell: docker-compose -f /home/deployuser/app/docker-compose.yml up -d --build
+      args:
+        chdir: /home/deployuser/app

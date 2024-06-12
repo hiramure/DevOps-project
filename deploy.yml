@@ -6,10 +6,10 @@
     - name: Pull latest code from Git
       git:
         repo: 'https://github.com/hiramure/DevOps-project.git'
-        dest: /home/sayuri/Desktop/Samasthi
+        dest: /var/lib/jenkins/Devops
         version: HEAD
 
     - name: Build and start Docker containers
-      shell: docker-compose -f /home/deployuser/app/docker-compose.yml up -d --build
+      shell: docker-compose -f /var/lib/jenkins/Devops/app/docker-compose.yml up -d --build
       args:
         chdir: /home/deployuser/app

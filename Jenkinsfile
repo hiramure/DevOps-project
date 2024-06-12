@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Docker Images') {
             steps {
-                // Your Docker build steps here
+                sh 'docker-compose build'
             }
         }
         stage('Deploy with Ansible') {

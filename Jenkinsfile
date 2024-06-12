@@ -2,35 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('first') {
+        stage('Build Docker Images') {
             steps {
-                // bat 'docker-compose build '
-                sh 'docker-compose build '
-                
+                sh 'docker-compose build'
             }
         }
 
-        stage('second') {
+        stage('Deploy with Ansible') {
             steps {
-                // bat 'docker-compose up -d mongodb  '
-                sh 'docker-compose up -d mongodb  '
+                ansiblePlaybook credentialsId: 'ansible-ssh-key', inventory: 'hosts', playbook: 'deploy.yml'
             }
         }
-
-        stage('third') {
-            steps {
-                // bat 'docker-compose up -d backend '
-                sh 'docker-compose up -d backend '
-            }
-        }
-
-        stage('fouth') {
-            steps {
-                // bat ' docker-compose up -d frontend  '
-                sh ' docker-compose up -d frontend  '
-            }
-        }
-
-
     }
 }
+

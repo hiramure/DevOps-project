@@ -1,16 +1,21 @@
 pipeline {
     agent any
-
     stages {
         stage('Build Docker Images') {
             steps {
-                sh 'docker-compose build'
+                // Your Docker build steps here
             }
         }
-
         stage('Deploy with Ansible') {
             steps {
-                ansiblePlaybook credentialsId: 'Ansible', inventory: 'hosts', playbook: 'deploy.yml'
+                // Change ownership of SSH key
+                sh 'sudo chown jenkins:jenkins /var/lib/jenkins/.ssh/id_rsa'
+                
+                // Set correct permissions on SSH key
+                sh 'sudo chmod 600 /var/lib/jenkins/.ssh/id_rsa'
+                
+                // Execute Ansible playbook with updated SSH key
+                sh 'ansible-playbook deploy.yml -i hosts --private-key /var/lib/jenkins/workspace/01/id_rsa -u sayuri'
             }
         }
     }

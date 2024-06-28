@@ -40,7 +40,7 @@ function Home() {
                     type="button"
                     class="btn btn-warning btn-lg btn-block"
                   >
-                    Van
+                    Vans
                   </button>
                 </Link>
               </div>

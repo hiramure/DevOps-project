@@ -27,7 +27,7 @@ function Home() {
                     type="button"
                     class="btn btn-warning btn-lg btn-block"
                   >
-                    Car
+                    Sedan Cars
                   </button>
                 </Link>
               </div>
